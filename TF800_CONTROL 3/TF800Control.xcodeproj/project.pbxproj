@@ -1,0 +1,49 @@
+// !$*UTF8*$!
+{
+ archiveVersion = 1; classes = {}; objectVersion = 56;
+ objects = {
+ P00000000000000000000001 = {isa = PBXProject; attributes = {LastUpgradeCheck = 1500;}; buildConfigurationList = P00000000000000000000002; compatibilityVersion = "Xcode 14.0"; developmentRegion = fr; mainGroup = P00000000000000000000003; productRefGroup = P00000000000000000000004; projectDirPath = ""; projectRoot = ""; targets = (P00000000000000000000005,);};
+ P00000000000000000000003 = {isa = PBXGroup; children = (P00000000000000000000006,P00000000000000000000007,P00000000000000000000008,P00000000000000000000004,); sourceTree = "<group>";};
+ P00000000000000000000004 = {isa = PBXGroup; children = (P0000000000000000000000A,); name = Products; sourceTree = "<group>";};
+ P00000000000000000000006 = {isa = PBXGroup; path = TF800Control; sourceTree = "<group>"; children = (P00000000000000000000010,P00000000000000000000011,P00000000000000000000012,P00000000000000000000013,P00000000000000000000014,P00000000000000000000015,);};
+ P00000000000000000000010 = {isa = PBXGroup; path = .; sourceTree = "<group>"; children = (P00000000000000000000020,P00000000000000000000021,);};
+ P00000000000000000000011 = {isa = PBXGroup; path = Models; sourceTree = "<group>"; children = (P00000000000000000000022,);};
+ P00000000000000000000012 = {isa = PBXGroup; path = Services; sourceTree = "<group>"; children = (P00000000000000000000023,P00000000000000000000024,);};
+ P00000000000000000000013 = {isa = PBXGroup; path = Views; sourceTree = "<group>"; children = (P00000000000000000000025,P00000000000000000000026,P00000000000000000000027,);};
+ P00000000000000000000014 = {isa = PBXGroup; path = .; sourceTree = "<group>"; children = (P00000000000000000000028,);};
+ P00000000000000000000015 = {isa = PBXGroup; path = .; sourceTree = "<group>"; children = (P0000000000000000000002A,);};
+ P00000000000000000000007 = {isa = PBXGroup; children = (); name = Frameworks; sourceTree = "<group>";};
+ P00000000000000000000008 = {isa = PBXGroup; path = Documentation; sourceTree = "<group>"; children = ();};
+ P00000000000000000000020 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TF800ControlApp.swift; sourceTree = "<group>";};
+ P00000000000000000000021 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>";};
+ P00000000000000000000022 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>";};
+ P00000000000000000000023 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = "<group>";};
+ P00000000000000000000024 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TF800HIDDetector.swift; sourceTree = "<group>";};
+ P00000000000000000000025 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>";};
+ P00000000000000000000026 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeysView.swift; sourceTree = "<group>";};
+ P00000000000000000000027 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherViews.swift; sourceTree = "<group>";};
+ P00000000000000000000028 = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>";};
+ P0000000000000000000002A = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>";};
+ P0000000000000000000000A = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TF800 CONTROL.app"; sourceTree = BUILT_PRODUCTS_DIR;};
+ B00000000000000000000030 = {isa = PBXBuildFile; fileRef = P00000000000000000000020;};
+ B00000000000000000000031 = {isa = PBXBuildFile; fileRef = P00000000000000000000021;};
+ B00000000000000000000032 = {isa = PBXBuildFile; fileRef = P00000000000000000000022;};
+ B00000000000000000000033 = {isa = PBXBuildFile; fileRef = P00000000000000000000023;};
+ B00000000000000000000034 = {isa = PBXBuildFile; fileRef = P00000000000000000000024;};
+ B00000000000000000000035 = {isa = PBXBuildFile; fileRef = P00000000000000000000025;};
+ B00000000000000000000036 = {isa = PBXBuildFile; fileRef = P00000000000000000000026;};
+ B00000000000000000000037 = {isa = PBXBuildFile; fileRef = P00000000000000000000027;};
+ B00000000000000000000038 = {isa = PBXBuildFile; fileRef = P00000000000000000000028;};
+ P00000000000000000000040 = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (B00000000000000000000030,B00000000000000000000031,B00000000000000000000032,B00000000000000000000033,B00000000000000000000034,B00000000000000000000035,B00000000000000000000036,B00000000000000000000037,); runOnlyForDeploymentPostprocessing = 0;};
+ P00000000000000000000041 = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (B00000000000000000000038,); runOnlyForDeploymentPostprocessing = 0;};
+ P00000000000000000000042 = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0;};
+ P00000000000000000000005 = {isa = PBXNativeTarget; buildConfigurationList = P00000000000000000000043; buildPhases = (P00000000000000000000040,P00000000000000000000042,P00000000000000000000041,); buildRules = (); dependencies = (); name = "TF800 CONTROL"; productName = "TF800 CONTROL"; productReference = P0000000000000000000000A; productType = "com.apple.product-type.application";};
+ P00000000000000000000002 = {isa = XCConfigurationList; buildConfigurations = (P00000000000000000000050,P00000000000000000000051,); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release;};
+ P00000000000000000000043 = {isa = XCConfigurationList; buildConfigurations = (P00000000000000000000052,P00000000000000000000053,); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release;};
+ P00000000000000000000050 = {isa = XCBuildConfiguration; buildSettings = {MACOSX_DEPLOYMENT_TARGET = 13.0; SDKROOT = macosx; SWIFT_VERSION = 5.0;}; name = Debug;};
+ P00000000000000000000051 = {isa = XCBuildConfiguration; buildSettings = {MACOSX_DEPLOYMENT_TARGET = 13.0; SDKROOT = macosx; SWIFT_VERSION = 5.0;}; name = Release;};
+ P00000000000000000000052 = {isa = XCBuildConfiguration; buildSettings = {ARCHS = "$(ARCHS_STANDARD)"; CODE_SIGNING_ALLOWED = NO; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = TF800Control/Info.plist; PRODUCT_BUNDLE_IDENTIFIER = fr.tf800control.app; PRODUCT_NAME = "TF800 CONTROL"; SWIFT_VERSION = 5.0; MACOSX_DEPLOYMENT_TARGET = 13.0;}; name = Debug;};
+ P00000000000000000000053 = {isa = XCBuildConfiguration; buildSettings = {ARCHS = "$(ARCHS_STANDARD)"; CODE_SIGNING_ALLOWED = NO; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = TF800Control/Info.plist; PRODUCT_BUNDLE_IDENTIFIER = fr.tf800control.app; PRODUCT_NAME = "TF800 CONTROL"; SWIFT_VERSION = 5.0; MACOSX_DEPLOYMENT_TARGET = 13.0;}; name = Release;};
+ };
+ rootObject = P00000000000000000000001;
+}
