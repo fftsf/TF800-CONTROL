@@ -9,28 +9,57 @@ permissions:
 
 jobs:
   build:
-    runs-on: macos-14
+    name: Compile TF800 CONTROL
+    runs-on: macos-15-intel
+
     steps:
       - name: Télécharger le projet
         uses: actions/checkout@v4
 
-      - name: Compiler TF800 CONTROL
+      - name: Trouver le dossier du projet
+        shell: bash
         run: |
-          cd TF800_CONTROL
-          chmod +x Scripts/build-macos.sh
-          ./Scripts/build-macos.sh
+          PROJECT_DIR="$(dirname "$(find . -type d -name 'TF800Control.xcodeproj' -print -quit)")"
 
-      - name: Préparer le ZIP
+          if [ -z "$PROJECT_DIR" ] || [ ! -d "$PROJECT_DIR" ]; then
+            echo "ERREUR : Projet Xcode introuvable."
+            exit 1
+          fi
+
+          echo "PROJECT_DIR=$PROJECT_DIR" >> "$GITHUB_ENV"
+          echo "Projet trouvé : $PROJECT_DIR"
+
+      - name: Compiler et créer le DMG
+        shell: bash
         run: |
-          cd TF800_CONTROL/build/DerivedData/Build/Products/Release
-          ditto -c -k --sequesterRsrc --keepParent "TF800 CONTROL.app" "$GITHUB_WORKSPACE/TF800_CONTROL_App.zip"
+          chmod +x "$PROJECT_DIR/Scripts/build-macos.sh"
+          "$PROJECT_DIR/Scripts/build-macos.sh"
+
+      - name: Préparer le fichier APP
+        shell: bash
+        run: |
+          APP="$PROJECT_DIR/build/DerivedData/Build/Products/Release/TF800 CONTROL.app"
+
+          if [ ! -d "$APP" ]; then
+            echo "ERREUR : Application introuvable."
+            exit 1
+          fi
+
+          ditto -c -k --sequesterRsrc --keepParent \
+            "$APP" "$GITHUB_WORKSPACE/TF800_CONTROL_App.zip"
+
+      - name: Vérifier le DMG
+        shell: bash
+        run: |
+          test -f "$PROJECT_DIR/TF800_CONTROL_Installer.dmg"
+          ls -lh "$PROJECT_DIR/TF800_CONTROL_Installer.dmg"
 
       - name: Publier les fichiers
         uses: actions/upload-artifact@v4
         with:
-          name: TF800-CONTROL-macOS
+          name: TF800-CONTROL-INSTALLER
           path: |
-            TF800_CONTROL/TF800_CONTROL_Installer.dmg
+            ${{ env.PROJECT_DIR }}/TF800_CONTROL_Installer.dmg
             TF800_CONTROL_App.zip
           if-no-files-found: error
           retention-days: 14
