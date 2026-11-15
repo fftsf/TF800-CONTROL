@@ -1,8 +1,11 @@
-// !$*UTF8*$!
+
+ // !$*UTF8*$!
 {
- archiveVersion = 1; classes = {}; objectVersion = 56;
+ archiveVersion = 1;
+ classes = {};
+ objectVersion = 56;
  objects = {
- P00000000000000000000001 = {isa = PBXProject; attributes = {LastUpgradeCheck = 1500;}; buildConfigurationList = P00000000000000000000002; compatibilityVersion = "Xcode 14.0"; developmentRegion = fr; mainGroup = P00000000000000000000003; productRefGroup = P00000000000000000000004; projectDirPath = ""; projectRoot = ""; targets = (P00000000000000000000005,);};
+ P00000000000000000000001 = {isa = PBXProject; attributes = {LastUpgradeCheck = 1500;}; buildConfigurationList = P00000000000000000000002; compatibilityVersion = "Xcode 14.0"; developmentRegion = fr; mainGroup = P00000000000000000000003; projectDirPath = ""; projectRoot = ""; targets = (P00000000000000000000005,);};
  P00000000000000000000003 = {isa = PBXGroup; children = (P00000000000000000000006,P00000000000000000000007,P00000000000000000000008,P00000000000000000000004,); sourceTree = "<group>";};
  P00000000000000000000004 = {isa = PBXGroup; children = (P0000000000000000000000A,); name = Products; sourceTree = "<group>";};
  P00000000000000000000006 = {isa = PBXGroup; path = TF800Control; sourceTree = "<group>"; children = (P00000000000000000000010,P00000000000000000000011,P00000000000000000000012,P00000000000000000000013,P00000000000000000000014,P00000000000000000000015,);};
@@ -15,7 +18,7 @@
  P00000000000000000000007 = {isa = PBXGroup; children = (); name = Frameworks; sourceTree = "<group>";};
  P00000000000000000000008 = {isa = PBXGroup; path = Documentation; sourceTree = "<group>"; children = ();};
  P00000000000000000000020 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TF800ControlApp.swift; sourceTree = "<group>";};
- P00000000000000000000021 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>";};
+ P00000000000000000000021 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Views/ContentView.swift"; sourceTree = "<group>";};
  P00000000000000000000022 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>";};
  P00000000000000000000023 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = "<group>";};
  P00000000000000000000024 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TF800HIDDetector.swift; sourceTree = "<group>";};
