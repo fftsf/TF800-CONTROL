@@ -1,0 +1,36 @@
+
+name: Build TF800 CONTROL for macOS
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: macos-14
+    steps:
+      - name: Télécharger le projet
+        uses: actions/checkout@v4
+
+      - name: Compiler TF800 CONTROL
+        run: |
+          cd TF800_CONTROL
+          chmod +x Scripts/build-macos.sh
+          ./Scripts/build-macos.sh
+
+      - name: Préparer le ZIP
+        run: |
+          cd TF800_CONTROL/build/DerivedData/Build/Products/Release
+          ditto -c -k --sequesterRsrc --keepParent "TF800 CONTROL.app" "$GITHUB_WORKSPACE/TF800_CONTROL_App.zip"
+
+      - name: Publier les fichiers
+        uses: actions/upload-artifact@v4
+        with:
+          name: TF800-CONTROL-macOS
+          path: |
+            TF800_CONTROL/TF800_CONTROL_Installer.dmg
+            TF800_CONTROL_App.zip
+          if-no-files-found: error
+          retention-days: 14
